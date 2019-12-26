@@ -1,0 +1,17 @@
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rooms{
+    color: aliceblue;
+    background-color: black;
+}
+
+.back{
+	background-color:gainsboro;
+;
+}
+.error{
+	color: red;
+}
