@@ -23,7 +23,7 @@ public class HotelManagementController {
 	@Autowired
 	HotelService hotelService;
 
-	@RequestMapping("/My Stay")
+	@RequestMapping("/MyStay")
 	public String index() {
 		return "Room";
 	}
