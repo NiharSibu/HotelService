@@ -6,3 +6,9 @@ services:
     build: . 
     ports:
       - '30090:8080'
+ environment:
+      - HOTEL_DB_HOST=mysql
+      - HOTEL_DB_PASSWORD=my-secret-pw
+  links:
+      - mysql
+  restart: always
