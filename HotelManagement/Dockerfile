@@ -1,17 +1,14 @@
-#Base Image
-FROM openjdk:8
 
-# Create DIR
-RUN mkdir -p /usr/src/myapp
+FROM tomcat:9
 
-# COPY APPLICTAION COde 
-COPY /target/HotelManagement-0.0.1-SNAPSHOT.war /usr/src/myapp
+ 
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Setup Working DIR
-WORKDIR /usr/src/myapp
+ 
+COPY target/HotelManagement-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
-#EXPOSE 
+ 
 EXPOSE 8080
 
-# Start the Bot Service 
-CMD ["java", "-jar", "HotelManagement-0.0.1-SNAPSHOT.war"]
+ 
+CMD ["catalina.sh", "run"]
