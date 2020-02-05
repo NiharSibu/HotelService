@@ -1,0 +1,9 @@
+
+version: '2'
+
+
+services:
+  HotelManagement:
+    build: . 
+    ports:
+      - '30090:8080'
