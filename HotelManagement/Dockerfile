@@ -1,7 +1,17 @@
+#Base Image
+FROM openjdk:8
 
-FROM tomcat:8.0
+# Create DIR
+RUN mkdir -p /usr/src/myapp
 
-MAINTAINER Nihar
+# COPY APPLICTAION COde 
+COPY /target/HotelManagement-0.0.1-SNAPSHOT.war /usr/src/myapp
 
-COPY target/HotelManagement-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+# Setup Working DIR
+WORKDIR /usr/src/myapp
 
+#EXPOSE 
+EXPOSE 8080
+
+# Start the Bot Service 
+CMD ["java", "-jar", "HotelManagement-0.0.1-SNAPSHOT.war"]
