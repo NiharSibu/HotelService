@@ -29,7 +29,7 @@
     - Restart Tomcat
 
 
-  - name: Copy Petclinic Project War Files
+  - name: Copy HotelManagement Project War Files
     copy: src=templates/HotelManagement-0.0.1-SNAPSHOT.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
 
   handlers:
