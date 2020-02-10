@@ -31,17 +31,10 @@ resource "null_resource" "remote-exec-1" {
       "sudo apt-get update",
       "sudo apt-get install python sshpass -y",
       "sudo apt-get update",
-      "sudo apt-get install -y \n
-    sudo apt-transport-https \n
-    ca-certificates \n
-    curl \n
-    software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-sudo add-apt-repository \n
-   "deb https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \n
-   $(lsb_release -cs) \n
-   stable"",
-   "sudo apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | grep 17.03 | head -1 | awk '{print $3}')",
+      "sudo apt-get install -y sudo apt-transport-https ca-certificates curl software-properties-common",
+  "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -",
+  "sudo add-apt-repository "deb https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"",
+  "sudo apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | grep 17.03 | head -1 | awk '{print $3}')",
     ]
   }
 }
